@@ -57,7 +57,7 @@
     text-align: center;
     min-height: auto; 
     justify-content: flex-start; 
-    padding-top: 3rem;
+    padding: 3rem 1.5rem 6rem;
   }
   .bottom {
     flex-direction: column;
@@ -74,7 +74,7 @@
   }
   .lighthouseArea {
     order: 2;
-    margin: 0 auto 2rem;
+    margin: 0 auto 0rem;
     width: clamp(90px, 20vw, 130px); /* smaller on phones */
   }
   .doors {
