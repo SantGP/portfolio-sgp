@@ -1,0 +1,40 @@
+/* PortalCard.module.css — Styles for one PortalCard only. */
+
+/* The card itself: a tall panel that lifts and glows amber on hover */
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0.8rem 2.5rem; /* bigger buttons */
+  background-color: var(--azul-medio);
+  border: 1px solid rgba(190, 147, 102, 0.2);
+  border-radius: 14px;
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-0.5px); /* lifts up */
+  border-color: var(--ambar);
+  box-shadow: 0 12px 40px rgba(190, 147, 102, 0.18); /* amber glow */
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: var(--crema-tenue);
+  font-size: 0.9rem;
+  margin-bottom: 0; /* no gap needed now, it's inline */
+}
+
+

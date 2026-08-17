@@ -1,69 +1,51 @@
-import Image from "next/image";
+// page.tsx — The home page (the "hub").
+
+"use client";
+
+import { useState } from "react";
+import Lighthouse from "@/components/Lighthouse";
+import PortalCard from "@/components/PortalCard";
 import styles from "./page.module.css";
+import About from "@/components/About";
 
 export default function Home() {
+  const [lit, setLit] = useState(false);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+    <main id="top" className={styles.hub}>
+      {/* TOP BLOCK: name across the full width */}
+      <h1 className={styles.heading}>Santiago Gonzalez Perez</h1>
+
+      {/* BOTTOM BLOCK: left (tagline + doors) and right (lighthouse) */}
+      <div className={styles.bottom}>
+        {/* Left side */}
+        <div className={styles.left}>
+          <p className={styles.tagline}>3D Animator · Web Development</p>
+
+          <section
+            className={styles.doors}
+            onMouseEnter={() => setLit(true)}
+            onMouseLeave={() => setLit(false)}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <PortalCard title="Animation" href="/animation" />
+            <PortalCard title="Code" href="/coding" />
+            <PortalCard title="Photography" href="/photography" />
+          </section>
         </div>
-      </main>
-    </div>
+
+        {/* Right side: lighthouse */}
+        <div className={styles.lighthouseArea}>
+          <Lighthouse lit={lit} />
+        </div>
+      </div>
+       <a href="#about" className={styles.scrollArrow} aria-label="Scroll to about">
+          ↓
+        </a>
+    </main>
+
+    <About />
+    </>
+    
   );
 }

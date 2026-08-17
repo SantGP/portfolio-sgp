@@ -1,0 +1,52 @@
+/* Navbar.module.css — Styles for Navbar.tsx only (scoped via CSS Modules). */
+
+/* The bar itself: fixed to the top, spread logo and links to the edges */
+.navbar {
+  position: sticky; /* stays at the top as you scroll */
+  top: 0;
+  z-index: 100; /* stays above other content */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, links right */
+  padding: 1rem 2rem;
+  background-color: rgba(11, 32, 51, 0.85); /* semi-transparent night blue */
+  backdrop-filter: blur(8px); /* frosted-glass effect behind the bar */
+  border-bottom: 1px solid rgba(190, 147, 102, 0.25); /* faint amber line */
+}
+
+/* Logo + name group on the left */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+/* The list of links on the right */
+.links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none; /* remove bullet points */
+  font-size: 0.95rem;
+}
+
+/* Each link: amber underline grows on hover */
+.links a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent; /* invisible until hover */
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--ambar-claro);
+  border-bottom-color: var(--ambar); /* amber underline appears */
+}

@@ -1,0 +1,64 @@
+/* About.module.css — Styles for the About section. */
+
+/* Full-width paper-colored band */
+.about {
+  background-color: var(--papel);
+  color: var(--azul-noche);
+  padding: 5rem 4rem;
+  margin: 0;
+  width: 100%;
+}
+
+/* Centered content, photo + text side by side */
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Photo */
+.photo {
+  flex-shrink: 0;
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 7rem;
+}
+
+/* Text column */
+.text {
+  flex: 1;
+}
+
+.title {
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.text p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Demo reel link: amber, underlined */
+.link {
+  color: var(--ambar);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Mobile: stack photo on top, center everything */
+@media (max-width: 700px) {
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .photo {
+    width: 220px;
+  }
+}

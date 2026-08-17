@@ -1,150 +1,105 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* page.module.css — Home page (the hub) styles. */
 
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.hub {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  min-height: 100vh;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  position: relative;
 }
 
-.main {
+/* TOP: name, full width */
+.heading {
+  font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+/* BOTTOM: left column (tagline + doors) and lighthouse on the right */
+.bottom {
   display: flex;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* Left column: tagline on top, doors pushed to the bottom */
+.left {
   flex: 1;
-  width: 100%;
-  max-width: 800px;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  min-height: 320px;
 }
 
-.intro {
+.tagline {
+  color: var(--crema-tenue);
+  font-size: clamp(1rem, 0.7rem + 1.2vw, 1.7rem);
+}
+
+.doors {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+  gap: 2rem;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+/* Lighthouse on the right — fluid width so it shrinks with the window */
+.lighthouseArea {
+  flex-shrink: 0;
+  width: clamp(110px, 14vw, 170px);
+  margin-right: 2rem;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+/* ---- MOBILE: everything stacked and centered ---- */
+@media (max-width: 860px) {
+  .hub {
+    text-align: center;
+    min-height: auto; /* don't force full height on mobile */
+    justify-content: flex-start; /* start at the top on mobile */
+    padding-top: 3rem;
   }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left {
+    min-height: auto;
+    align-items: center;
+    display: contents; /* let tagline and doors flow directly, so we can order them */
+  }
+  .tagline {
+    order: 1;
+    margin-bottom: -1rem;
+  }
+  .lighthouseArea {
+    order: 2;
+    margin: 0 auto 2rem;
+    width: clamp(90px, 20vw, 130px); /* smaller on phones */
+  }
+  .doors {
+    order: 3;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+/* Scroll-down arrow at the bottom of the hub */
+.scrollArrow {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: var(--ambar);
+  animation: bounce 2s infinite; /* gentle bounce to invite scrolling */
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  50% {
+    transform: translateX(-50%) translateY(8px);
   }
-}
-
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
 }

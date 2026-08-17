@@ -1,0 +1,40 @@
+/* Lighthouse.module.css — Lighthouse image + glow. */
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.lighthouse {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+
+.glow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(190, 147, 102, 0.5) 0%,
+    rgba(190, 147, 102, 0.2) 35%,
+    rgba(190, 147, 102, 0) 70%
+  );
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* let the mouse pass through the glow */
+}
+
+.isLit {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.25);
+}
