@@ -50,3 +50,40 @@
   color: var(--ambar-claro);
   border-bottom-color: var(--ambar); /* amber underline appears */
 }
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--crema);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 700px) {
+  /* Show the hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide the links by default; show them when open */
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%; /* right below the navbar */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--azul-noche);
+    padding: 1rem 2rem;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(190, 147, 102, 0.25);
+  }
+
+  /* When open, show them */
+  .links.open {
+    display: flex;
+  }
+}

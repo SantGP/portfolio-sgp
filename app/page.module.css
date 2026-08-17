@@ -55,8 +55,8 @@
 @media (max-width: 860px) {
   .hub {
     text-align: center;
-    min-height: auto; /* don't force full height on mobile */
-    justify-content: flex-start; /* start at the top on mobile */
+    min-height: auto; 
+    justify-content: flex-start; 
     padding-top: 3rem;
   }
   .bottom {
@@ -79,8 +79,12 @@
   }
   .doors {
     order: 3;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+    max-width: 420px; /* forces wrap into ~2 per row = inverted pyramid */
+    margin: 0 auto;
   }
 }
 
