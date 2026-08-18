@@ -188,6 +188,7 @@
   color: var(--ambar);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: var(--font-mono), monospace;
 }
 
 .details dd {

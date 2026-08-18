@@ -1,0 +1,25 @@
+/* SideRail.module.css — Fixed vertical social bar on the right (desktop). */
+
+.rail {
+  position: fixed;
+  right: 1rem;
+  top: 80%; 
+  transform: translateY(-50%);
+  z-index: 90;
+  background-color: var(--azul-medio);
+  border: 1px solid rgba(190, 147, 102, 0.25);
+  border-radius: 999px;
+  padding: 1.3rem 0.7rem; 
+}
+
+.rail ul {
+  flex-direction: column;
+  gap: 1.5rem; 
+}
+
+/* Hide the rail on mobile */
+@media (max-width: 700px) {
+  .rail {
+    display: none;
+  }
+}

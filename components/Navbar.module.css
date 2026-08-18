@@ -1,20 +1,18 @@
-/* Navbar.module.css — Styles for Navbar.tsx only (scoped via CSS Modules). */
+/* Navbar.module.css — Styles for Navbar.tsx. */
 
-/* The bar itself: fixed to the top, spread logo and links to the edges */
 .navbar {
-  position: sticky; 
+  position: sticky;
   top: 0;
-  z-index: 100; /* stays above other content */
+  z-index: 100; 
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  padding: 1rem 2rem;
-  background-color: rgba(11, 32, 51, 0.85); /* semi-transparent night blue */
-  backdrop-filter: blur(8px); /* glass effect behind the bar */
-  border-bottom: 1px solid rgba(190, 147, 102, 0.25); /* faint glow line */
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  background-color: rgba(11, 32, 51, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(190, 147, 102, 0.25);
 }
 
-/* Logo + name group on the left */
 .logo {
   display: flex;
   align-items: center;
@@ -25,65 +23,147 @@
   padding: 0;
 }
 
-.name {
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-}
-
-/* The list of links on the right */
-.links {
+/* Desktop links */
+.desktopLinks {
   display: flex;
-  gap: 1.75rem;
-  list-style: none; 
-  font-size: 0.95rem;
+  gap: 2.5rem;
+  list-style: none;
+  font-size: 1.15rem;
+  align-items: center;
 }
 
-/* Each link: amber underline grows on hover */
-.links a {
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent; /* invisible until hover */
+.desktopLinks a {
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.links a:hover {
+.desktopLinks a:hover {
   color: var(--ambar-claro);
-  border-bottom-color: var(--ambar); 
+  border-bottom-color: var(--ambar);
 }
 
-/* Hamburger button — hidden on desktop */
+.contactLink {
+  display: flex;
+  align-items: center;
+  color: var(--ambar);
+  transition: transform 0.2s ease;
+}
+
+.contactLink:hover {
+  transform: translateY(-2px);
+}
+
+/* Hamburger — hidden on desktop */
 .hamburger {
   display: none;
   background: none;
   border: none;
   color: var(--crema);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   cursor: pointer;
+  line-height: 1;
+  position: relative;
+  z-index: 210; /* above the menu and overlay */
+}
+
+/* Mobile menu — hidden on desktop */
+.mobileMenu {
+  display: none;
+}
+
+.overlay {
+  display: none;
 }
 
 /* ---- MOBILE ---- */
-@media (max-width: 700px) {
-  /* Show the hamburger */
+@media (max-width: 860px) {
+  .navbar {
+    padding: 1.25rem 1.5rem;
+  }
+
+  /* Hide desktop links, show hamburger */
+  .desktopLinks {
+    display: none;
+  }
+
   .hamburger {
     display: block;
   }
 
-  /* Hide the links by default; show them when open */
-  .links {
-    display: none;
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--azul-noche);
-    padding: 1rem 2rem;
-    gap: 1rem;
-    border-bottom: 1px solid rgba(190, 147, 102, 0.25);
+  /* Blurred dark overlay behind the menu */
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(11, 32, 51, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 190;
   }
 
-  /* When open, show them */
-  .links.open {
+  /* Sliding panel */
+  .mobileMenu {
     display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+    background-color: var(--papel);
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.3);
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 200;
   }
+
+  .mobileMenu.open {
+    transform: translateX(0);
+  }
+
+  .mobileMenu a {
+    color: var(--azul-noche);
+  }
+
+  .mobileMenu a:hover {
+    color: var(--ambar);
+  }
+
+  .mobileMenu .contactLink {
+    color: var(--azul-noche);
+  }
+
+  .mobileSocials {
+    margin-top: 1rem;
+  }
+
+  .mobileSocials svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Close button */
+  .closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--azul-noche);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+}
+
+
+.hamburgerOpen {
+  color: var(--azul-noche); 
 }

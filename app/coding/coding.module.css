@@ -89,6 +89,7 @@
   border-radius: 999px;
   background: rgba(190, 147, 102, 0.15);
   color: var(--ambar-claro);
+  font-family: var(--font-mono), monospace;
 }
 
 /* Links */

@@ -5,6 +5,28 @@
 import type { Metadata } from "next";
 import "./globals.css"; // connects the global styles to the whole site
 import Navbar from "@/components/Navbar"; 
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import SideRail from "@/components/SideRail";
+
+// Headlines
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
+
+// Body text
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+});
+
+// Captions / technical
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+});
 
 // This info shows in the browser tab and in search/social previews
 export const metadata: Metadata = {
@@ -19,9 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <body>
-        <Navbar /> {/* appears on every page */}
+        <Navbar />
+        <SideRail />
         {children}
       </body>
     </html>

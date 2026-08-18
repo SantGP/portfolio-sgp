@@ -30,9 +30,14 @@ html {
 body {
   background-color: var(--azul-noche);
   color: var(--crema);
-  font-family: system-ui, -apple-system, sans-serif; /* safe default font for now */
+  font-family: var(--font-body), system-ui, sans-serif; /* IBM Plex Sans for body */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Headings use Space Grotesk */
+h1, h2, h3 {
+  font-family: var(--font-heading), system-ui, sans-serif;
 }
 
 /* Links inherit color and remove the underline */

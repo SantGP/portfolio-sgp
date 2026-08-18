@@ -1,0 +1,19 @@
+/* SocialLinks.module.css — Icon link styles. */
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  color: var(--crema-tenue);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  color: var(--ambar);
+  transform: translateY(-2px);
+}

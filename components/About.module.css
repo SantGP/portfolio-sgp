@@ -31,6 +31,8 @@
 /* Text column */
 .text {
   flex: 1;
+  max-width: 620px; 
+  padding-right: 2rem; 
 }
 
 .title {
@@ -52,13 +54,17 @@
 }
 
 /* Mobile: stack photo on top, center everything */
-@media (max-width: 700px) {
+@media (max-width: 860px) {
   .inner {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
   .photo {
     width: 220px;
+  }
+  .text {
+    padding-right: 0; 
+    max-width: 100%;
   }
 }
