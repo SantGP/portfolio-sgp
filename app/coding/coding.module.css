@@ -1,0 +1,122 @@
+/* coding.module.css — Styles for the Coding projects page. */
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.header {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.5rem, 2rem + 3vw, 4rem);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.intro {
+  color: var(--crema-tenue);
+  font-size: 1.1rem;
+  max-width: 560px;
+  text-align: center;
+  margin: 0 auto; /* centers the 560px block itself */
+}
+
+/* Grid of project cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--azul-medio);
+  border: 1px solid rgba(190, 147, 102, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--ambar);
+}
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--azul-noche);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+  color: var(--crema-tenue);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Tech tags */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(190, 147, 102, 0.15);
+  color: var(--ambar-claro);
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.linkPrimary,
+.linkSecondary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.linkPrimary {
+  background: var(--ambar);
+  color: var(--azul-noche);
+}
+
+.linkSecondary {
+  border: 1px solid rgba(242, 237, 228, 0.3);
+  color: var(--crema);
+}
+
+.linkPrimary:hover,
+.linkSecondary:hover {
+  opacity: 0.85;
+}

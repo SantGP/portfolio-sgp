@@ -7,6 +7,8 @@ import Lighthouse from "@/components/Lighthouse";
 import PortalCard from "@/components/PortalCard";
 import styles from "./page.module.css";
 import About from "@/components/About";
+import Stacks from "@/components/Stacks";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   const [lit, setLit] = useState(false);
@@ -30,7 +32,7 @@ export default function Home() {
           >
             <PortalCard title="Animation" href="/animation" />
             <PortalCard title="Code" href="/coding" />
-            <PortalCard title="Photography" href="/photography" />
+            <PortalCard title="Design" href="/design" />
           </section>
         </div>
 
@@ -45,6 +47,8 @@ export default function Home() {
     </main>
 
     <About />
+    <Stacks />
+    <ContactForm />
     </>
     
   );

@@ -1,0 +1,46 @@
+/* Stacks.module.css — Styles for the Stacks section. */
+
+.stacks {
+  padding: 5rem 2rem;
+  background-color: var(--azul-noche);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.8rem, 1.4rem + 2vw, 2.8rem);
+  margin-bottom: 3rem;
+}
+
+/* Each category block */
+.group {
+  margin-bottom: 2.5rem;
+}
+
+.groupLabel {
+  font-size: 1.1rem;
+  color: var(--ambar);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.tag {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  background-color: var(--azul-medio);
+  border: 1px solid rgba(190, 147, 102, 0.3);
+  color: var(--crema);
+}

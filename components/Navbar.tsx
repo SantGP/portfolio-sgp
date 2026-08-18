@@ -7,6 +7,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   // Tracks whether the mobile menu is open
@@ -15,15 +16,24 @@ export default function Navbar() {
   // Closes the menu (used after tapping a link)
   const closeMenu = () => setMenuOpen(false);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <nav className={styles.navbar}>
-      {/* Logo — scrolls to top */}
+      {/* Logo — goes home, or scrolls to top if already home */}
       <button
         type="button"
         className={styles.logo}
         onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          window.history.pushState(null, "", "/#top");
+          if (pathname === "/") {
+            // Already home: just scroll up
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.history.pushState(null, "", "/#top");
+          } else {
+            // On another page: navigate home
+            router.push("/");
+          }
           closeMenu();
         }}
       >
@@ -66,8 +76,8 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="/photography" onClick={closeMenu}>
-            Photography
+          <Link href="/design" onClick={closeMenu}>
+            Design
           </Link>
         </li>
       </ul>
