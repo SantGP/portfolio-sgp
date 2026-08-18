@@ -1,4 +1,4 @@
-// Stacks.tsx — The "skills / tools" section shown on the home page.
+// Stacks.tsx — The "skills" section shown on the home page.
 // Technologies grouped by category, rendered as tags.
 
 import styles from "./Stacks.module.css";
@@ -6,7 +6,7 @@ import styles from "./Stacks.module.css";
 // Tools grouped by category
 const GROUPS = [
   {
-    label: "Web",
+    label: "Web Development",
     items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js"],
   },
   {

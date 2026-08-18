@@ -11,14 +11,14 @@
   position: relative;
 }
 
-/* TOP: name, full width */
+/* TOP: name */
 .heading {
   font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
   line-height: 1;
   margin-bottom: 2rem;
 }
 
-/* BOTTOM: left column (tagline + doors) and lighthouse on the right */
+/* BOTTOM: left column and lighthouse */
 .bottom {
   display: flex;
   gap: 3rem;
@@ -44,7 +44,7 @@
   gap: 2rem;
 }
 
-/* Lighthouse on the right — fluid width so it shrinks with the window */
+/* Lighthouse on the right - shrinks with the window */
 .lighthouseArea {
   flex-shrink: 0;
   width: clamp(110px, 14vw, 170px);
@@ -66,7 +66,7 @@
   .left {
     min-height: auto;
     align-items: center;
-    display: contents; /* let tagline and doors flow directly, so we can order them */
+    display: contents; 
   }
   .tagline {
     order: 1;
@@ -83,7 +83,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    max-width: 420px; /* forces wrap into ~2 per row = inverted pyramid */
+    max-width: 420px; /* forces wrap into ~2 per row */
     margin: 0 auto;
   }
 }
@@ -96,7 +96,7 @@
   transform: translateX(-50%);
   font-size: 2rem;
   color: var(--ambar);
-  animation: bounce 2s infinite; /* gentle bounce to invite scrolling */
+  animation: bounce 2s infinite; 
 }
 
 @keyframes bounce {

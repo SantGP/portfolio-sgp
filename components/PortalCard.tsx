@@ -1,6 +1,5 @@
-// PortalCard.tsx — A single "door" that links to one section of the site.
-// We write it ONCE here, then reuse it three times (Animation, Code, Photography)
-// on the home page, just passing different data each time via props.
+// PortalCard.tsx — A single button that links to one section of the site.
+
 
 import Link from "next/link";
 import styles from "./PortalCard.module.css";

@@ -1,7 +1,4 @@
-// Lighthouse.tsx — The lighthouse image with a soft amber glow behind it.
-// The glow is normally dim and "breathes". When `lit` is true (because the
-// user is hovering a section), the glow brightens up — the lighthouse
-// "lights up" to point at the section they're aiming at.
+// Lighthouse.tsx — The lighthouse image with a soft glow behind it.
 
 import Image from "next/image";
 import styles from "./Lighthouse.module.css";

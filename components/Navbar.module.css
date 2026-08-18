@@ -2,16 +2,16 @@
 
 /* The bar itself: fixed to the top, spread logo and links to the edges */
 .navbar {
-  position: sticky; /* stays at the top as you scroll */
+  position: sticky; 
   top: 0;
   z-index: 100; /* stays above other content */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo left, links right */
+  justify-content: space-between; 
   padding: 1rem 2rem;
   background-color: rgba(11, 32, 51, 0.85); /* semi-transparent night blue */
-  backdrop-filter: blur(8px); /* frosted-glass effect behind the bar */
-  border-bottom: 1px solid rgba(190, 147, 102, 0.25); /* faint amber line */
+  backdrop-filter: blur(8px); /* glass effect behind the bar */
+  border-bottom: 1px solid rgba(190, 147, 102, 0.25); /* faint glow line */
 }
 
 /* Logo + name group on the left */
@@ -35,7 +35,7 @@
 .links {
   display: flex;
   gap: 1.75rem;
-  list-style: none; /* remove bullet points */
+  list-style: none; 
   font-size: 0.95rem;
 }
 
@@ -48,7 +48,7 @@
 
 .links a:hover {
   color: var(--ambar-claro);
-  border-bottom-color: var(--ambar); /* amber underline appears */
+  border-bottom-color: var(--ambar); 
 }
 
 /* Hamburger button — hidden on desktop */
@@ -72,7 +72,7 @@
   .links {
     display: none;
     position: absolute;
-    top: 100%; /* right below the navbar */
+    top: 100%; 
     left: 0;
     right: 0;
     flex-direction: column;

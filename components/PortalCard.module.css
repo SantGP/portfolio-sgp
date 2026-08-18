@@ -18,7 +18,7 @@
 .card:hover {
   transform: translateY(-0.5px); /* lifts up */
   border-color: var(--ambar);
-  box-shadow: 0 12px 40px rgba(190, 147, 102, 0.18); /* amber glow */
+  box-shadow: 0 12px 40px rgba(190, 147, 102, 0.18); /* glow */
 }
 
 .text {
@@ -34,16 +34,16 @@
 .subtitle {
   color: var(--crema-tenue);
   font-size: 0.9rem;
-  margin-bottom: 0; /* no gap needed now, it's inline */
+  margin-bottom: 0; 
 }
 
 /* ---- MOBILE: smaller buttons so two fit per row ---- */
 @media (max-width: 860px) {
   .card {
-    padding: 0.7rem 1.5rem; /* less side padding = narrower buttons */
-    justify-content: center; /* center the label */
+    padding: 0.7rem 1.5rem; 
+    justify-content: center; 
   }
   .title {
-    font-size: 1.15rem; /* a bit smaller */
+    font-size: 1.15rem; 
   }
 }

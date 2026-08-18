@@ -1,48 +1,47 @@
-/* globals.css — Estilos base de todo el sitio.
-   Aquí definen las variables de color (paleta marítima) y los reset básicos.
-   Se conecta automáticamente al sitio porque layout.tsx lo importa. */
+/* globals.css — Base styles for the whole site.
+   Defines the color variables (maritime palette) and basic resets.
+   It's applied site-wide because layout.tsx imports it. */
 
-/* Variables de color: se usan en todos lados con var(--nombre).
-   Si algún día cambias un color, lo cambias aquí una vez y afecta a todo. */
+/* Color variables: used everywhere with var(--name).
+   Change a color here once and it updates across the whole site. */
 :root {
-
-  --azul-noche: #0b2033;      /* fondo principal, la "noche" */
-  --azul-medio: #14304a;      /* superficies como tarjetas */
-  --ambar: #be9366;           /* el haz de luz, acentos, botones */
-  --ambar-claro: #d4b391;     /* hover de los acentos */
-  --crema: #f2ede4;           /* texto principal sobre el azul */
-  --crema-tenue: #a9b4bf;     /* texto secundario, menos importante */
-  --papel: #f2ede4;      /* light "paper" background for the About section */
+  --azul-noche: #0b2033;      /* main background, the "night" */
+  --azul-medio: #14304a;      /* surfaces like cards */
+  --ambar: #be9366;           /* the light beam, accents, buttons */
+  --ambar-claro: #d4b391;     /* accent hover */
+  --crema: #f2ede4;           /* primary text over the dark blue */
+  --crema-tenue: #a9b4bf;     /* secondary, less prominent text */
+  --papel: #f2ede4;           /* light "paper" background for the About section */
 }
 
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
-/* Reset básico: quita márgenes raros del navegador y hace que
-   padding/border no rompan los anchos (box-sizing). */
+/* Basic reset: removes default browser margins and makes
+   padding/border not break element widths (box-sizing). */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos del cuerpo de la página */
+/* Page body styles */
 body {
   background-color: var(--azul-noche);
   color: var(--crema);
-  font-family: system-ui, -apple-system, sans-serif; /* fuente segura por ahora */
+  font-family: system-ui, -apple-system, sans-serif; /* safe default font for now */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Los links heredan el color y quitamos el subrayado por defecto */
+/* Links inherit color and remove the underline */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Las imágenes nunca se desbordan de su contenedor */
+/* Images never overflow their container */
 img {
   max-width: 100%;
   display: block;
