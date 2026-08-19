@@ -93,6 +93,10 @@ export default function AnimationPage() {
               <h2 className={styles.modalTitle}>{selected.title}</h2>
               <p className={styles.modalSynopsis}>{selected.synopsis}</p>
 
+              {selected.description && (
+                <p className={styles.modalDescription}>{selected.description}</p>
+              )}
+              
               <dl className={styles.details}>
                 <div>
                   <dt>Year</dt>

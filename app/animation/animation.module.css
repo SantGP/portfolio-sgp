@@ -194,3 +194,9 @@
 .details dd {
   color: var(--crema);
 }
+
+.modalDescription {
+  color: var(--crema);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}

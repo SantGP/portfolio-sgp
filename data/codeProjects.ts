@@ -20,5 +20,15 @@ export const codeProjects: CodeProject[] = [
     github: "https://github.com/SantGP/assignment-2",
     demo: "https://assignment-2-two-psi.vercel.app/",
   },
+  {
+    title: "The Open Shelf",
+    description:
+      "A book search app built with vanilla TypeScript. It uses the Open Library API to search millions of books by title, author, or genre, with genre browsing, cover art, and a clean card layout. Renders results safely with createElement to avoid injection risks.",
+    tech: ["TypeScript", "HTML", "CSS", "Open Library API"],
+    image: "/projects/code/open-library.png",
+    github: "https://github.com/SantGP/open-shelf",
+    demo: "https://open-shelf-indol.vercel.app/",
+  },
+
   // Add more projects here as objects, same shape
 ];
