@@ -1,4 +1,4 @@
-/* Lighthouse.module.css — Lighthouse image + glow. */
+/* Lighthouse.module.css — Two stacked drawings that cross-fade. */
 
 .wrapper {
   position: relative;
@@ -6,35 +6,30 @@
   justify-content: center;
 }
 
+/* Base "off" drawing */
 .lighthouse {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.glow {
+/* "On" drawing stacked exactly on top, hidden until lit */
+.lighthouseOn {
   position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  width: 140%;
-  height: 140%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(190, 147, 102, 0.5) 0%,
-    rgba(190, 147, 102, 0.2) 35%,
-    rgba(190, 147, 102, 0) 70%
-  );
-  border-radius: 50%;
-  filter: blur(12px);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none; /* let the mouse pass through the glow so its not on the way*/
+  transition: opacity 0.4s ease; /* smooth fade between off and on */
+  pointer-events: none;
 }
 
+/* When lit, fade the "on" drawing in */
 .isLit {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.25);
 }
