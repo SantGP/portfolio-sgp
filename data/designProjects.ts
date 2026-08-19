@@ -32,4 +32,24 @@ export const designProjects: DesignProject[] = [
     client: "",
     tools: ["Adobe Illustrator"],
   },
+    {
+    title: "Personal Branding",
+    category: "Brand Identity",
+    thumbnail: "/projects/design/personal-branding/personal-branding-01.jpg",
+    images: [
+      "/projects/design/personal-branding/personal-branding-02.jpg",
+      "/projects/design/personal-branding/personal-branding-03.jpg",
+      "/projects/design/personal-branding/personal-branding-04.jpg",
+      "/projects/design/personal-branding/personal-branding-05.jpg",
+      "/projects/design/personal-branding/personal-branding-06.jpg",
+      "/projects/design/personal-branding/personal-branding-07.jpg",
+    ],
+    description:
+      "My personal brand identity, built around a lighthouse that combines my initials, S and G. The maritime theme reflects guidance and direction, with a palette of deep navy, amber, and cream, paired with a clear typographic system. This identity carries across my entire portfolio.",
+    year: "2026",
+    client: "",
+    tools: ["Adobe Illustrator"],
+  },
+
+
 ];
